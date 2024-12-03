@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Determine if we're in a subdirectory
         const isInSubdirectory = window.location.pathname.includes('/pages/');
         
-        // Define navbar HTML with conditional paths
+        // Define navbar HTML with conditional paths and hamburger menu
         const navbarHTML = `
             <nav class="navbar">
                 <div class="nav-container">
@@ -14,6 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
                             <img src="${isInSubdirectory ? '../images/logo.png' : './images/logo.png'}" alt="Wedding Logo" class="nav-logo-img">
                             <span class="nav-logo-text">Nikunj weds Ridhika</span>
                         </a>
+                    </div>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
                     <ul class="nav-links">
                         <li><a href="${isInSubdirectory ? './about.html' : './pages/about.html'}" data-page="about">Our Story</a></li>
@@ -33,10 +38,45 @@ document.addEventListener('DOMContentLoaded', function() {
         // Set active state
         setActiveNavLink();
         
+        // Add hamburger menu functionality
+        setupMobileMenu();
+        
     } catch (error) {
         console.error('Error loading navbar:', error);
     }
 });
+
+function setupMobileMenu() {
+    console.log('Setting up mobile menu...');
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const links = document.querySelectorAll('.nav-links li');
+
+    hamburger.addEventListener('click', () => {
+        console.log('Toggle mobile menu');
+        // Toggle navigation
+        navLinks.classList.toggle('nav-active');
+        hamburger.classList.toggle('active');
+
+        // Animate links
+        links.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+            }
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (event) => {
+        if (!event.target.closest('.nav-container') && navLinks.classList.contains('nav-active')) {
+            console.log('Closing mobile menu');
+            navLinks.classList.remove('nav-active');
+            hamburger.classList.remove('active');
+        }
+    });
+}
 
 function setActiveNavLink() {
     console.log('Setting active nav link...');
