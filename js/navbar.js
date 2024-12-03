@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         </a>
                     </div>
                     <ul class="nav-links">
-                        <li><a href="${isInSubdirectory ? '../index.html' : './index.html'}" data-page="home">Send a Note</a></li>
+                        <li><a href="${isInSubdirectory ? './about.html' : './pages/about.html'}" data-page="about">Our Story</a></li>
                         <li><a href="${isInSubdirectory ? './gallery.html' : './pages/gallery.html'}" data-page="gallery">Gallery</a></li>
                         <li><a href="${isInSubdirectory ? './schedule.html' : './pages/schedule.html'}" data-page="schedule">Schedule</a></li>
-                        <li><a href="${isInSubdirectory ? './about.html' : './pages/about.html'}" data-page="about">The Story</a></li>
+                        <li><a href="${isInSubdirectory ? '../index.html' : './index.html'}" data-page="home">Send a Note</a></li>
                     </ul>
                 </div>
             </nav>
