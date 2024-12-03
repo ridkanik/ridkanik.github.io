@@ -188,4 +188,20 @@ button:active {
         gap: 0.5rem;
         text-align: center;
     }
+}
+
+/* About page styles */
+.about-content {
+    padding: 20px 0;
+}
+
+.about-content h3 {
+    color: #333;
+    margin: 20px 0 10px 0;
+}
+
+.about-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
 } 
