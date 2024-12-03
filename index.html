@@ -3,10 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Note</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Wedding Website</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Wedding Logo" class="nav-logo-img">
+                    <span class="nav-logo-text">Nikunj weds Ridhika</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Send a Note</a></li>
+                <li><a href="pages/gallery.html">Gallery</a></li>
+                <li><a href="pages/schedule.html">Schedule</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container min-height-container">
         <div class="card">
             <h2 class="card-title">Send a Note to the Happy Couple</h2>
@@ -24,5 +40,7 @@
             </form>
         </div>
     </div>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
