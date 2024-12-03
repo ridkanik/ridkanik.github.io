@@ -15,10 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
                             <span class="nav-logo-text">Nikunj weds Ridhika</span>
                         </a>
                     </div>
-                    <div class="hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                    <div class="hamburger-wrapper">
+                        <div class="hamburger-tooltip">Know more about the couple!</div>
+                        <div class="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     </div>
                     <ul class="nav-links">
                         <li><a href="${isInSubdirectory ? './about.html' : './pages/about.html'}" data-page="about">Our Story</a></li>
@@ -51,12 +54,24 @@ function setupMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     const links = document.querySelectorAll('.nav-links li');
+    const tooltip = document.querySelector('.hamburger-tooltip');
 
     hamburger.addEventListener('click', () => {
         console.log('Toggle mobile menu');
         // Toggle navigation
         navLinks.classList.toggle('nav-active');
         hamburger.classList.toggle('active');
+
+        // Hide/show tooltip based on menu state
+        if (hamburger.classList.contains('active')) {
+            console.log('Hiding tooltip');
+            tooltip.style.opacity = '0';
+            tooltip.style.visibility = 'hidden';
+        } else {
+            console.log('Showing tooltip');
+            tooltip.style.opacity = '1';
+            tooltip.style.visibility = 'visible';
+        }
 
         // Animate links
         links.forEach((link, index) => {
@@ -74,6 +89,9 @@ function setupMobileMenu() {
             console.log('Closing mobile menu');
             navLinks.classList.remove('nav-active');
             hamburger.classList.remove('active');
+            // Show tooltip when menu closes
+            tooltip.style.opacity = '1';
+            tooltip.style.visibility = 'visible';
         }
     });
 }

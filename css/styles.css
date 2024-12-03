@@ -351,4 +351,76 @@ button:active {
     .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
     }
+}
+
+/* Update tooltip styles */
+.hamburger-wrapper {
+    position: relative;
+    display: none;
+}
+
+.hamburger-tooltip {
+    position: absolute;
+    top: calc(100% + 35px);
+    right: -20px;
+    background-color: white;
+    color: #ed64a6;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    pointer-events: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: float 3s ease-in-out infinite;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 1;
+    visibility: visible;
+}
+
+.hamburger-tooltip::before {
+    content: '';
+    position: absolute;
+    top: -45px;
+    right: 25px;
+    width: 25px;
+    height: 25px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ed64a6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 19V5'/%3E%3Cpath d='M7 10c0 0 5-5 5-5 0 0 5 5 5 5'/%3E%3Cpath d='M7 14s2.5-2.5 5-2.5c2.5 0 5 2.5 5 2.5'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: bounce 2s infinite;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Floating animation */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Update bounce animation for smoother movement */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(5deg);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger-wrapper {
+        display: block;
+        margin-left: auto;
+    }
+
+    .hamburger {
+        margin-left: 0;
+    }
 } 
