@@ -90,7 +90,7 @@ body, html {
 
 .card {
     width: 100%;
-    max-width: 1200px;
+    max-width: 100%; /* Change from 1200px to 100% */
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
     border-radius: 0.5rem;
@@ -99,6 +99,19 @@ body, html {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeIn 0.5s ease-out forwards;
+    margin-bottom: 1.5rem;
+    box-sizing: border-box; /* Add this to include padding in the width calculation */
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.about-content .card {
+    max-width: 100%; /* Ensure inner cards take full width of the parent */
+    margin-bottom: 0; /* Remove bottom margin for inner cards */
 }
 
 @keyframes fadeIn {
@@ -112,7 +125,7 @@ body, html {
     font-size: 1.5rem;
     font-weight: bold;
     color: #1a202c;
-    margin-bottom: 0.5rem;src: ;
+    margin-bottom: 0.5rem;
 }
 
 .card-description {
