@@ -18,19 +18,49 @@
     font-size: 0.9em;
     color: #666;
 }
-.year4-image {
-  background-color: rgba(237, 100, 166, 0.1); /* Light pink background, similar to the haiku background */
-  padding: 10px;
-  border-radius: 8px;
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.year4-image .media-image {
-  border: none;
-  box-shadow: none;
-  border-radius: 8px;
-  width: 100%;
-  height: auto;
-  display: block;
+.card h3 {
+    color: #333333; /* This is a deep gray color */
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+}
+
+.card .date {
+    font-style: italic;
+    color: #718096;
+    margin-bottom: 1rem;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.audio-content {
+    margin-top: 1rem;
+}
+
+#playPauseBtn {
+    background-color: #ed64a6;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#playPauseBtn:hover {
+    background-color: #d53f8c;
 }
 .shlok-container {
   display: flex;
@@ -58,4 +88,15 @@
 .shlok .meaning {
   font-size: 0.9em;
   color: #4a5568;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-top: 2rem; /* Add some top padding to compensate for the removed title */
+}
+.about-content .card h1 {
+    text-align: center;
+    margin-bottom: 1rem;
 }
