@@ -12,3 +12,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 }); 
+
+const playPauseBtn = document.getElementById('playPauseBtn');
+const backgroundMusic = document.getElementById('backgroundMusic');
+
+playPauseBtn.addEventListener('click', () => {
+    if (backgroundMusic.paused) {
+        backgroundMusic.play();
+        playPauseBtn.textContent = 'Pause Music';
+    } else {
+        backgroundMusic.pause();
+        playPauseBtn.textContent = 'Play Music';
+    }
+});
