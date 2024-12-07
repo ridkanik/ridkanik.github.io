@@ -18,3 +18,44 @@
     font-size: 0.9em;
     color: #666;
 }
+.year4-image {
+  background-color: rgba(237, 100, 166, 0.1); /* Light pink background, similar to the haiku background */
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.year4-image .media-image {
+  border: none;
+  box-shadow: none;
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.shlok-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.shlok {
+  background-color: rgba(237, 100, 166, 0.1);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.shlok h4 {
+  color: #ed64a6;
+  margin-bottom: 0.5rem;
+}
+
+.shlok .sanskrit {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.shlok .meaning {
+  font-size: 0.9em;
+  color: #4a5568;
+}
