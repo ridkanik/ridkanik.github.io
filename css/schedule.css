@@ -1,0 +1,36 @@
+.schedule-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    overflow: hidden; /* Ensures content doesn't overflow */
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+}
+
+.card-description {
+    font-size: 1rem;
+    color: #4a5568;
+    margin-bottom: 1rem;
+}
+
+/* Style for the "coming soon" message */
+.coming-soon {
+    font-size: 1.2rem;
+    color: #718096;
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+}
