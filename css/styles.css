@@ -90,7 +90,7 @@ body, html {
 
 .card {
     width: 100%;
-    max-width: 100%; /* Change from 1200px to 100% */
+    max-width: 100%;
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
     border-radius: 0.5rem;
@@ -100,18 +100,24 @@ body, html {
     transform: translateY(20px);
     animation: fadeIn 0.5s ease-out forwards;
     margin-bottom: 1.5rem;
-    box-sizing: border-box; /* Add this to include padding in the width calculation */
+    box-sizing: border-box;
 }
 
 .about-content {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem; /* Reduced from 1.5rem to 1rem */
+    margin-top: 1rem; /* Add some top margin to create space after the card description */
 }
 
 .about-content .card {
-    max-width: 100%; /* Ensure inner cards take full width of the parent */
-    margin-bottom: 0; /* Remove bottom margin for inner cards */
+    max-width: 100%;
+    margin-bottom: 0;
+}
+
+/* Add this new rule to reduce space after the card description */
+.card-description {
+    margin-bottom: 0.5rem;
 }
 
 @keyframes fadeIn {
@@ -130,9 +136,47 @@ body, html {
 
 .card-description {
     color: #4a5568;
+    margin-bottom: -2rem; /* Reduce this value from 1.5rem to 1rem */
 }
 
-/* Form styles */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem; /* Add a small top margin */
+}
+
+.about-content .card:first-child {
+    margin-top: 0; /* Remove top margin from the first card in about-content */
+}
+
+/* Haiku styling */
+/* Haiku styling */
+.haiku {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    max-width: 300px; /* Adjust this value as needed */
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: rgba(237, 100, 166, 0.1);
+    border-radius: 0.5rem;
+    text-align: left;
+}
+
+.haiku p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+    color: #4a5568;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem; /* Add a small top margin */
+}
+
+.about-content .card:first-child {
+    margin-top: 0; /* Remove top margin from the first card in about-content */
+}
 .form-group {
     margin-bottom: 1rem;
     width: 100%;
