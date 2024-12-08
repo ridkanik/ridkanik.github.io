@@ -35,6 +35,22 @@ body, html {
     color: inherit;
 }
 
+/* Add these new styles */
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo img {
+    margin-right: 10px; /* Add some space between the logo and text */
+}
+
+.nav-logo span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1; /* Adjust line height to match the logo height */
+}
+
 .nav-logo-img {
     height: 40px; /* Adjust this value based on your logo size */
     width: auto;
