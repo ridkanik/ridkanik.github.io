@@ -1,7 +1,20 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.container.min-height-container {
+    height: 100vh;
+    padding-top: 60px; /* Adjust this value based on your navbar height */
+    box-sizing: border-box;
+}
 .schedule-container {
-    max-width: 800px;
-    margin: 0 auto;
+    width: 100%;
+    height: calc(100% - 60px); /* Adjust based on your navbar height */
     padding: 20px;
+    box-sizing: border-box;
 }
 
 .card {
@@ -9,8 +22,10 @@
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin-bottom: 20px;
-    overflow: hidden; /* Ensures content doesn't overflow */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .card-title {
@@ -26,6 +41,18 @@
     margin-bottom: 1rem;
 }
 
+.pdf-container {
+    flex-grow: 1;
+    width: 100%;
+    height: calc(100% - 100px); /* Adjust based on your title and description height */
+    overflow: hidden;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
 /* Style for the "coming soon" message */
 .coming-soon {
     font-size: 1.2rem;
@@ -33,4 +60,15 @@
     text-align: center;
     padding: 20px;
     font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .schedule-container {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 15px;
+    }
 }
